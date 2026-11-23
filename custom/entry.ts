@@ -1,3 +1,4 @@
+import './brand.css'
 import { en } from '../src/i18n/en.js'
 import { zh } from '../src/i18n/zh.js'
 import { BRAND } from './brand.js'

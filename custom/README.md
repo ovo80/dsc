@@ -11,6 +11,7 @@
 | `entry.ts`         | 品牌入口：在 React 渲染前覆盖 i18n 文案和页面标题         |
 | `rspack.config.ts` | 继承上游 `createConfig`，追加品牌入口、标题和图标         |
 | `favicon.png`      | 站点图标，构建时复制到 `dist/favicon.png` 并注入 `<link>` |
+| `brand.css`        | 全局样式覆盖：侧边栏 logo 伪元素等                        |
 
 ## 改名字
 
@@ -34,6 +35,9 @@ pnpm build
 
 替换 `custom/favicon.png`（建议 128×128 透明底 PNG），重新构建即可。构建会把它复制到
 `dist/favicon.png`，并往 `index.html` 注入 favicon 和 apple-touch-icon 的 `<link>`。
+
+侧边栏顶部的 logo 由 `brand.css` 里的 `div[class*='appName-']::before` 伪元素实现，同样
+引用这张图，不需要改上游 `Sider.tsx`。
 
 ## 同步上游
 

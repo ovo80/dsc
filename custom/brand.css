@@ -1,0 +1,17 @@
+/*
+ * 侧边栏品牌：用伪元素在应用名左侧放 logo，绕开对上游 Sider.tsx 的修改。
+ * CSS Modules 的 class 形如 `appName-xxxxxx`，这里按包含匹配。
+ */
+div[class*='appName-'] {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+div[class*='appName-']::before {
+  content: '';
+  flex: none;
+  width: 22px;
+  height: 22px;
+  background: url('./favicon.png') center / contain no-repeat;
+}
