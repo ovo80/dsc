@@ -4,9 +4,9 @@
  */
 export const BRAND = {
   /** 侧边栏、设置里显示的应用名 */
-  appName: 'Oh My DSC',
+  appName: 'oh my dsc',
   /** 浏览器标签页标题，也是构建产物 index.html 的 <title> */
-  htmlTitle: 'Oh My DSC',
+  htmlTitle: 'oh my dsc',
   /** API 服务地址；换成自建或代理服务时改这里 */
   apiOrigin: 'https://api.deepseek.com',
 } as const
