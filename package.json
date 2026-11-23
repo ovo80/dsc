@@ -6,10 +6,10 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "rspack serve -c rspack.config.ts",
-    "build": "rm -rf dist && NODE_ENV=production rspack build -c rspack.config.ts",
+    "dev": "rspack serve -c custom/rspack.config.ts",
+    "build": "rspack build -c custom/rspack.config.ts --node-env production",
     "type": "tsc -p tsconfig.json",
-    "lint": "oxlint src rspack.config.ts",
+    "lint": "oxlint src custom rspack.config.ts",
     "format": "oxfmt --write ."
   },
   "dependencies": {
