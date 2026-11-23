@@ -5,11 +5,12 @@
 
 ## 目录
 
-| 文件               | 作用                                              |
-| ------------------ | ------------------------------------------------- |
-| `brand.ts`         | 唯一的品牌数据源：应用名、页面标题、API 地址      |
-| `entry.ts`         | 品牌入口：在 React 渲染前覆盖 i18n 文案和页面标题 |
-| `rspack.config.ts` | 继承上游 `createConfig`，追加品牌入口和标题插件   |
+| 文件               | 作用                                                      |
+| ------------------ | --------------------------------------------------------- |
+| `brand.ts`         | 唯一的品牌数据源：应用名、页面标题、API 地址              |
+| `entry.ts`         | 品牌入口：在 React 渲染前覆盖 i18n 文案和页面标题         |
+| `rspack.config.ts` | 继承上游 `createConfig`，追加品牌入口、标题和图标         |
+| `favicon.png`      | 站点图标，构建时复制到 `dist/favicon.png` 并注入 `<link>` |
 
 ## 改名字
 
@@ -28,6 +29,11 @@ pnpm build
 
 新建 `custom/brand.css`，覆盖 `theme.css` 里的 CSS 变量，然后在 `entry.ts` 里
 `import './brand.css'` 即可，不用改上游样式文件。
+
+## 换图标
+
+替换 `custom/favicon.png`（建议 128×128 透明底 PNG），重新构建即可。构建会把它复制到
+`dist/favicon.png`，并往 `index.html` 注入 favicon 和 apple-touch-icon 的 `<link>`。
 
 ## 同步上游
 
